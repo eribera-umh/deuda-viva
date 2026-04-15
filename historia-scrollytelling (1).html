@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Interactiva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0; padding: 0;
+            background-color: #ffffff; color: #333333;
+        }
+        
+        #scrolly { display: flex; flex-direction: row-reverse; max-width: 1400px; margin: 0 auto; padding: 2rem 1rem; align-items: flex-start; }
+        figure { width: 55%; position: sticky; top: 5vh; height: 90vh; margin: 0; display: flex; align-items: center; justify-content: center; }
+        iframe { border: none; background: transparent; margin: auto; transition: width 0.3s ease; width: 80%; height: 100%; max-height: 90vh; }
+        article { width: 45%; padding-right: 2rem; position: relative; z-index: 2; }
+        
+        .step {
+            min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+        }
+        .step-content {
+            background-color: rgba(255, 255, 255, 0.95); padding: 2.5rem; 
+            border-radius: 0px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+            opacity: 0.3; border: 2px solid transparent;
+        }
+        
+        /* Modificador para bloques vacíos (Fantasma) */
+        .step-content.is-empty {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            padding: 0 !important;
+            pointer-events: none;
+        }
+
+        .step.is-active .step-content:not(.is-empty) {
+            opacity: 1; transform: scale(1.02); border-color: #000000;
+        }
+        
+        .step.is-active .step-content.is-empty {
+            opacity: 1;
+        }
+
+        .step h2 { color: #000000; font-size: 1.8rem; margin-top: 0; }
+        .step p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 0; }
+
+        @media (max-width: 850px) {
+            #scrolly { display: block; padding: 0; }
+            figure { width: 100%; height: 100vh; position: sticky; top: 0; z-index: 0; display: flex; align-items: center; justify-content: center; padding: 0;}
+            iframe { width: 100% !important; height: 100vh !important; max-height: 100vh !important; border-radius: 0 !important; }
+            article { width: 100%; padding: 0; margin-top: -100vh; position: relative; z-index: 1; padding-top: 20vh; }
+            .step { min-height: 100vh; padding: 0 1.5rem; justify-content: flex-end; padding-bottom: 15vh; margin: 0; }
+            .step-content { box-shadow: 0 8px 30px rgba(0,0,0,0.3); background-color: rgba(255, 255, 255, 0.98); }
+            .step-content.is-empty { box-shadow: none; background-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <section id="scrolly">
+        <figure>
+            <iframe id="flourish-iframe" src="https://public.flourish.studio/story/3648161/embed#slide-0"></iframe>
+        </figure>
+        <article>
+            
+                <div class="step" data-slide="0">
+                    <div class="step-content is-empty">
+                        
+                    </div>
+                </div>
+                <div class="step" data-slide="1">
+                    <div class="step-content">
+                        <h2>Alicante</h2><p>La capital ha reducido su deuda un 77% en la última década. De los 147,3 M€ que asfixiaban sus cuentas en 2014, hoy solo restan alrededor de 40 M€. Un reflejo del rigor fiscal aplicado en las grandes urbes.</p>
+                    </div>
+                </div>
+                <div class="step" data-slide="2">
+                    <div class="step-content">
+                        <h2>Orihuela</h2><p>Tras años de descensos, Orihuela rompe la tendencia en 2024. Su deuda viva se ha multiplicado por 20, pasando de 2,2 M€ a 44,7 M€ tras pedir un crédito de 40 M€ para pagar sentencias judiciales antiguas y financiar inversiones bloqueadas. Es ya el segundo municipio más endeudado en cifras absolutas.</p>
+                    </div>
+                </div>
+                <div class="step" data-slide="3">
+                    <div class="step-content">
+                        <h2>Torrevieja</h2><p>Torrevieja es el ejemplo de éxito en la costa. En 10 años ha fulminado el 92% de sus obligaciones bancarias, bajando de 62,9 M€ a apenas 4,5 M€.</p>
+                    </div>
+                </div>
+                <div class="step" data-slide="5">
+                    <div class="step-content">
+                        <h2>Daya Vieja</h2><p>Con 3.174 € de deuda por habitante, Daya Vieja ostenta el récord provincial. Aunque su deuda total es de solo 2 M€, su pequeña población asume la carga individual más alta de todo Alicante.</p>
+                    </div>
+                </div>
+                <div class="step" data-slide="7">
+                    <div class="step-content">
+                        <h2>Xàbia</h2><p>A diferencia de otros grandes núcleos turísticos, Xàbia ha logrado liquidar totalmente sus préstamos bancarios. En 2014 debía 3,6 M€ y hoy su casilla está a cero, demostrando que el volumen de población no está reñido con una salud financiera impecable.</p>
+                    </div>
+                </div>
+                <div class="step" data-slide="8">
+                    <div class="step-content">
+                        <h2>Benidorm</h2><p>Benidorm encabeza el ranking provincial con 58,2 M€ de deuda viva. Sin embargo, la cifra es engañosa: el municipio ha logrado reducir su "mochila" un 32% desde 2014, cuando debía más de 86 millones, demostrando que incluso los grandes motores turísticos pueden sanear sus cuentas.</p>
+                    </div>
+                </div>
+                <div class="step" data-slide="0">
+                    <div class="step-content is-empty">
+                        
+                    </div>
+                </div>
+        </article>
+    </section>
+    <script>
+        const steps = document.querySelectorAll('.step');
+        const iframe = document.getElementById('flourish-iframe');
+        const baseUrl = "https://public.flourish.studio/story/3648161/embed#slide-";
+
+        const observerOptions = { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    steps.forEach(step => step.classList.remove('is-active'));
+                    entry.target.classList.add('is-active');
+                    const slideNumber = entry.target.getAttribute('data-slide');
+                    iframe.src = baseUrl + slideNumber;
+                }
+            });
+        }, observerOptions);
+
+        steps.forEach(step => observer.observe(step));
+    </script>
+</body>
+</html>
